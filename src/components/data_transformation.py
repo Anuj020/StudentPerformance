@@ -84,6 +84,11 @@ class DataTransformation:
 
             logging.info(f" Applying preprocessing object on training dataframe and testing dataframe")
 
+            '''
+                fit_transform() uses on train data as it first scaled data using mean ans std then transformed all data,
+                While transform() uses for only trmasforming data into arraay without scaling data ,also 
+                fit() method is used for JUST scaling data and it doesn't return anythhing.
+            '''
             input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr = preprocessing_obj.transform(input_feature_test_df)
 
